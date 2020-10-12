@@ -12,9 +12,11 @@ const Cli = props => {
     const [backIndex, setBackIndex] = useState(0);
     const textLog = React.createRef();
 
-    // useEffect(() => {
-    //     socketActions.receiveMessages((err, msg) => onMessageReceive(msg))
-    // }, [])
+    //on componentDidMount mount the eventemmiters to the component
+    useEffect(() => {
+        socketActions.receiveMessages((err, msg) => onMessageReceive(msg))
+    }, [])
+
 
     //componentDidUpdate for text area autoscroll
     useEffect(() => {
@@ -32,10 +34,22 @@ const Cli = props => {
 
     }, [backIndex])
 
+    //when a message is received append it to the console
+    const onMessageReceive = (msg) => {
+        setValue(previousMessages => `${previousMessages} \n\t${msg}\nRoot > `)
+        setOldValueLength(previeousLength => previeousLength + (` \n\t${msg}\nRoot > `).length)
+    }
+
     //on submit
     const onSumbit = (input) => {
-        setValue(`${value} \nyou typed vsk gamise ${input}\nRoot > `)
-        setOldValueLength(value.length + (` \nyou typed vsk gamise ${input}\nRoot > `).length)
+        if (input === 'clear') {
+            setValue('Root > ');
+            setOldValueLength(7);
+
+        } else {
+            setOldValueLength(previeousLength => previeousLength + input.length)
+            socketActions.sendMessage(input);
+        }
     }
 
     //when a button is pressed
@@ -100,7 +114,7 @@ const Cli = props => {
                 <div style={{ width: 12, height: 12, backgroundColor: "#e5c30f", borderRadius: 60, margin: "8px" }}></div>
                 <div style={{ width: 12, height: 12, backgroundColor: "#3bb662", borderRadius: 60, margin: "8px" }}></div>
             </div>
-            <textarea ref={textLog} style={{ overflowY: 'scroll', fontSize: 15, border: "none", resize: "none", width: 600, height: 330, backgroundColor: "#30353a", padding: 10, color: "white", outline: "none" }} value={value} onChange={(e) => { setValue(e.target.value); setNewLineValue(e.target.value.slice(oldValueLength)) }} onKeyDown={onButtonPress} >
+            <textarea ref={textLog} spellCheck="false" style={{ fontSize: 15, border: "none", resize: "none", width: 600, height: 330, backgroundColor: "#30353a", padding: 10, color: "white", outline: "none" }} value={value} onChange={(e) => { setValue(e.target.value); setNewLineValue(e.target.value.slice(oldValueLength)) }} onKeyDown={onButtonPress} >
 
             </textarea>
         </div>
