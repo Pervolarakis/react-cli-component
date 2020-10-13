@@ -5,10 +5,10 @@ import * as socketActions from '../socketio'
 const Cli = props => {
 
     //setting all the state
-    const [value, setValue] = useState('Root > ');
+    const [value, setValue] = useState('You > ');
     const [newLineValue, setNewLineValue] = useState('');
     const [pastCommands, setPastCommands] = useState([]);
-    const [oldValueLength, setOldValueLength] = useState(7);
+    const [oldValueLength, setOldValueLength] = useState(6);
     const [backIndex, setBackIndex] = useState(0);
     const textLog = React.createRef();
 
@@ -34,10 +34,15 @@ const Cli = props => {
 
     }, [backIndex])
 
+    useEffect(() => {
+        console.log(value, oldValueLength)
+    }, [oldValueLength])
+
     //when a message is received append it to the console
     const onMessageReceive = (msg) => {
-        setValue(previousMessages => `${previousMessages} \n\t${msg}\nRoot > `)
-        setOldValueLength(previeousLength => previeousLength + (` \n\t${msg}\nRoot > `).length)
+        console.log(msg.length)
+        setValue(previousMessages => `${previousMessages.slice(0, previousMessages.lastIndexOf('You'))}${msg}\nYou > `)
+        setOldValueLength(previeousLength => previeousLength + msg.length + 1)
     }
 
     //on submit
@@ -47,7 +52,7 @@ const Cli = props => {
             setOldValueLength(7);
 
         } else {
-            setOldValueLength(previeousLength => previeousLength + input.length)
+            // setOldValueLength(previeousLength => previeousLength + input.length)
             socketActions.sendMessage(input);
         }
     }
