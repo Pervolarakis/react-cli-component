@@ -1,21 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import * as socketActions from '../socketio'
+import { commands } from '../Commands/commands'
 
 
 const Cli = props => {
 
     //setting all the state
-    const [value, setValue] = useState('Root > ');
+    const [value, setValue] = useState(' Root > ');
     const [newLineValue, setNewLineValue] = useState('');
     const [pastCommands, setPastCommands] = useState([]);
-    const [oldValueLength, setOldValueLength] = useState(7);
+    const [oldValueLength, setOldValueLength] = useState(8);
     const [backIndex, setBackIndex] = useState(0);
     const textLog = React.createRef();
 
-    //on componentDidMount mount the eventemmiters to the component
-    useEffect(() => {
-        socketActions.receiveMessages((err, msg) => onMessageReceive(msg))
-    }, [])
+
 
 
     //componentDidUpdate for text area autoscroll
@@ -35,20 +32,20 @@ const Cli = props => {
     }, [backIndex])
 
     //when a message is received append it to the console
-    const onMessageReceive = (msg) => {
-        setValue(previousMessages => `${previousMessages} \n\t${msg}\nRoot > `)
-        setOldValueLength(previeousLength => previeousLength + (` \n\t${msg}\nRoot > `).length)
+    const sendMessage = (msg) => {
+        setValue(previousMessages => `${previousMessages} \n${msg}\n Root > `)
+        setOldValueLength(previeousLength => previeousLength + (` \n${msg}\n Root > `).length)
     }
 
     //on submit
     const onSumbit = (input) => {
         if (input === 'clear') {
-            setValue('Root > ');
-            setOldValueLength(7);
+            setValue(' Root > ');
+            setOldValueLength(8);
 
         } else {
             setOldValueLength(previeousLength => previeousLength + input.length)
-            socketActions.sendMessage(input);
+            sendMessage(commands(input));
         }
     }
 
