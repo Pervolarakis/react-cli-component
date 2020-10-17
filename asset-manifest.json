@@ -1,23 +1,22 @@
 {
   "files": {
     "main.css": "/react-cli-component/static/css/main.7d29222f.chunk.css",
-    "main.js": "/react-cli-component/static/js/main.0e964e69.chunk.js",
-    "main.js.map": "/react-cli-component/static/js/main.0e964e69.chunk.js.map",
+    "main.js": "/react-cli-component/static/js/main.35256532.chunk.js",
+    "main.js.map": "/react-cli-component/static/js/main.35256532.chunk.js.map",
     "runtime-main.js": "/react-cli-component/static/js/runtime-main.ec8380e7.js",
     "runtime-main.js.map": "/react-cli-component/static/js/runtime-main.ec8380e7.js.map",
-    "static/js/2.77fabf10.chunk.js": "/react-cli-component/static/js/2.77fabf10.chunk.js",
-    "static/js/2.77fabf10.chunk.js.map": "/react-cli-component/static/js/2.77fabf10.chunk.js.map",
+    "static/js/2.36079ff3.chunk.js": "/react-cli-component/static/js/2.36079ff3.chunk.js",
+    "static/js/2.36079ff3.chunk.js.map": "/react-cli-component/static/js/2.36079ff3.chunk.js.map",
     "index.html": "/react-cli-component/index.html",
-    "precache-manifest.a9bd459a576a700847e0e3eead79efd3.js": "/react-cli-component/precache-manifest.a9bd459a576a700847e0e3eead79efd3.js",
+    "precache-manifest.f2e3193458c3f074b0580cbc775ba734.js": "/react-cli-component/precache-manifest.f2e3193458c3f074b0580cbc775ba734.js",
     "service-worker.js": "/react-cli-component/service-worker.js",
     "static/css/main.7d29222f.chunk.css.map": "/react-cli-component/static/css/main.7d29222f.chunk.css.map",
-    "static/js/2.77fabf10.chunk.js.LICENSE.txt": "/react-cli-component/static/js/2.77fabf10.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/react-cli-component/static/media/logo.5d5d9eef.svg"
+    "static/js/2.36079ff3.chunk.js.LICENSE.txt": "/react-cli-component/static/js/2.36079ff3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.ec8380e7.js",
-    "static/js/2.77fabf10.chunk.js",
+    "static/js/2.36079ff3.chunk.js",
     "static/css/main.7d29222f.chunk.css",
-    "static/js/main.0e964e69.chunk.js"
+    "static/js/main.35256532.chunk.js"
   ]
 }
