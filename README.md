@@ -1,6 +1,8 @@
 # React CLI Component - Browser Command Line Interface
 
-![cli component](./cli.png)
+<p align="center">
+    <img src="./cli.png">
+</p>
 
 ## Introduction
 
@@ -46,7 +48,9 @@ In the addedsockets branch, you can set up communication with a remote server us
 
 ## Netcat-like Chat Room
 
-![netcat-like chat room](./cli2.png)
+<p align="center">
+    <img src="./cli2.png">
+</p>
 
 The chatroomcli branch offers a netcat-like chat room feature. Users can collaborate using the CLI. However, a separate socket server is required for this functionality. For the socket server setup, please refer to [chat-server-react-cli](https://github.com/Pervolarakis/chat-server-react-cli).
 
