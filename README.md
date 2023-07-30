@@ -6,7 +6,7 @@
 
 ## Introduction
 
-The React CLI Component is a versatile tool that brings the power of a command-line interface to the browser. It allows users to interact with a customizable filesystem and supports communication with a remote server using web sockets. Additionally, it offers a netcat-like chat room feature with multi-user support for real-time collaboration.
+The React CLI Component is a versatile tool that brings the power of a command-line interface to the browser. It allows users to interact with a customizable filesystem and supports communication with a remote server using web sockets. Additionally, it offers a netcat-like chat room feature with multi-user support for real-time chatting.
 
 ## Features
 
@@ -29,7 +29,7 @@ To install the React CLI Component, follow these steps:
 
 1. Clone the repository:
 
-`git clone https://github.com/your-username/react-cli-component.git`
+`git clone https://github.com/Pervolarakis/react-cli-component.git`
 `cd react-cli-component`
 
 2. Install dependencies:
