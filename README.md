@@ -30,6 +30,7 @@ To install the React CLI Component, follow these steps:
 1. Clone the repository:
 
 `git clone https://github.com/Pervolarakis/react-cli-component.git`
+
 `cd react-cli-component`
 
 2. Install dependencies:
